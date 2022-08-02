@@ -7,6 +7,13 @@ app.get('/', (req, res) => {
     input:process.stdin,
     output:process.stdout
   });
+
+  readline.setPrompt('Adicione uma propriedade CSS! \n');
+  readline.prompt();
+
+  let propriedades = []
+
+
 })
 
 app.listen(port, () => {
