@@ -13,6 +13,26 @@ app.get('/', (req, res) => {
 
   let propriedades = []
 
+    readline.on('line', function (input){
+      if (input !== "sair"){
+        propriedades.push(input)
+        readline.prompt();
+      } else {
+        readline.close()
+      }
+    }).on ('close', function(){
+      propriedades.sort(function(a,b){
+        var propA = a.toLowerCase(), propB = b.toLwerCase();
+        if (propA < propB)
+        return -1;
+        if (propA>propB)
+        return 1;
+        return 0;
+      });
+      propriedades.forEach(propriedade => console.log(propriedade))
+      propriedades = []
+      process.exit(0);
+    });
 
 })
 
