@@ -3,7 +3,10 @@ const app = express()
 const port = 3000
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  const readline = require("readline").createInterface({
+    input:process.stdin,
+    output:process.stdout
+  });
 })
 
 app.listen(port, () => {
